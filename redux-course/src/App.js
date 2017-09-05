@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
 import logo from './logo.svg';
 import './App.css';
 
@@ -11,19 +13,8 @@ class App extends Component {
           <h2>Welcome to React with Redux</h2>
         </div>
         <div className='Todo-App'>
-					<form>
-						<input type='text'/>
-					</form>
-					<div className='Todo-List'>
-						<ul>
-							{this.props.todos.map(todo => (
-								<li key={todo.id}>
-									<input type='checkbox' defaultChecked={todo.isComplete} />
-									{todo.name}
-								</li>
-							))}
-						</ul>
-					</div>
+					<TodoForm />
+					<TodoList todos={this.props.todos} />
 				</div>
       </div>
     );
